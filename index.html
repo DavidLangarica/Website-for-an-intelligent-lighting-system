@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iluminación</title>
+
+    <!-- Import Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font" />
+    
+    <!-- Import CSS file -->
+    <link rel="stylesheet" href="style.css" />
+
+     <!-- Import JS file -->
+     <script src="script.js"></script>
+
+</head>
+<body>
+
+    <div class="wrapper_general">
+
+        <img src="public/img/bg.png" alt="Fondo con bombillas" class="bg_img">
+
+        <div class="upper_number">
+            <span class="number" id="on_rooms">0</span>
+            <img src="public/img/bulb.png" alt="Bulb icon" class="bulb_number">
+            <p class="hab_sign">Habitaciones encendidas</p>
+        </div>
+
+        <div class="welcome_txt">
+            <h1>Bienvenido, Rodrigo!</h1>
+            <!-- <p class="subt">Toma el control de la Iluminación en tu hogar</p> -->
+        </div>
+
+        <div class="bottom">
+            <h3 class="control_txt">
+                Haz clic en alguna de las habitaciones disponibles para cambiar el estado de las luces:
+            </h3>
+
+            <div class="button_wrapper">
+                <div class="b_room_wrap">
+                    <div id="room_number">
+                        <h4 id="number_rooms">0</h4>
+                    </div>
+                    <div class="button_rooms" id="button_many_rooms" onclick="button_color_rooms()">
+                        <img src="public/button_icons/icon_bed.png" alt="Habitaciones" class="button_icon">
+                    </div>
+                </div>
+                <div class="button_rooms" id="button_rooms" onclick="button_color(this,0)">
+                    <img src="public/button_icons/icon_couch.png" alt="Sala" class="button_icon">
+                </div>
+
+                <div class="button_rooms" id="button_rooms2" onclick="button_color(this,1)">
+                    <img src="public/button_icons/icon_dinner.png" alt="Comedor" class="button_icon">
+                </div>
+                <div class="button_rooms" id="button_rooms3" onclick="button_color(this,2)">
+                    <img src="public/button_icons/icon_garage.png" alt="Garage" class="button_icon">
+                </div>
+                <div class="button_rooms" id="button_rooms4" onclick="button_color(this,3)">
+                    <img src="public/button_icons/icon_pool.png" alt="Alberca" class="button_icon">
+                </div>
+                <div class="button_rooms" id="button_rooms5" onclick="button_color(this,4)">
+                    <img src="public/button_icons/icon_plant.png" alt="Roof Garden" class="button_icon">
+                </div>
+                <div class="button_rooms" id="button_rooms6" onclick="button_color(this,5)">
+                    <img src="public/button_icons/icon_games.png" alt="Cuarto de juegos" class="button_icon">
+                </div>
+                <div class="button_rooms" id="button_rooms7" onclick="button_color(this,6)">
+                    <img src="public/button_icons/icon_court.png" alt="Cancha de tennis" class="button_icon">
+                </div>
+
+            </div>
+
+            <div class="clock_button" onclick="schedule()">
+                <img src="public/button_icons/icon_clock.png" alt="Programar horario" class="clock_icon">
+            </div>
+
+            <div class="popup_rooms" id="pop_rooms">
+                <div class="popup_content">
+                    <div class="close" onclick="close_roomswindow()"> <img src="public/button_icons/close.png" alt="Cerrar" class="close_icon"> </div>
+                    <div class="roomspp_wrapper">
+                        <img src="public/img/bed_outline.jpg" alt="Bedrooms outline" class="bed_bg">
+                        <h5 class="pop_title">
+                            Dormitorios
+                        </h5>
+                        <p class="popup_subt">
+                            Haz clic en el dormitorio en el que deseas encender o apagar las luces:
+                        </p>
+
+                        <div class="popup_buttons_rooms">
+                            <div class="popup_buttons_pp" onclick="button_color(this,7)">
+                                <img src="public/button_icons/room3.png" alt="Activar habitación 1" class="button_icon broom">
+                                <h6 class="rooms_txt"> Dormitorio 1</h6>
+                            </div>
+                            <div class="popup_buttons_pp" onclick="button_color(this,8)">
+                                <img src="public/button_icons/room2.png" alt="Activar habitación 2" class="button_icon broom">
+                                <h6 class="rooms_txt"> Dormitorio 2</h6>
+                            </div>
+                            <div class="popup_buttons_pp" onclick="button_color(this,9)">
+                                <img src="public/button_icons/room1.png" alt="Activar habitación 3" class="button_icon broom">
+                                <h6 class="rooms_txt"> Dormitorio 3</h6>
+                            </div>
+                            <div class="popup_buttons_pp" onclick="button_color(this,10)">
+                                <img src="public/button_icons/room4.png" alt="Activar habitación 4" class="button_icon broom">
+                                <h6 class="rooms_txt"> Dormitorio 4</h6>
+                            </div>
+                        </div>
+
+                        <div id="acc_button" onclick="close_roomswindow()">
+                            <h6 class="button_txt">Aceptar</h6>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup_rooms" id="popup_schedule">
+                <div class="popup_content">
+                    <div class="close" onclick="close_roomswindow()"> <img src="public/button_icons/close.png" alt="Cerrar" class="close_icon"> </div>
+                    <div class="roomspp_wrapper pop_schedule">
+                        <img src="public/img/roomgeneral_outline.jpg" alt="Bedrooms outline" class="bed_bg">
+                        <h5 class="pop_title pop_title_mobile">
+                            Programar horario
+                        </h5>
+                        <p class="popup_subt">
+                            Selecciona un rango de horas para programar el encendido de luces
+                        </p>
+                        
+                        <div class="time_wrapper">
+                            <div class="time_select">
+                                <h6>
+                                    De:
+                                </h6>
+                                <form>
+                                    <input type="time" id="startTime" class="time" />
+                                </form>
+                                </div>
+                        
+                                <div class="time_select">
+                                    <h6>
+                                        Hasta:
+                                    </h6>
+                                    <form>
+                                        <input type="time" id="endTime" class="time" />
+                                    </form>
+                                </div>
+                    </div>
+
+                    <p class="popup_subt subtpp2">
+                        Selecciona las habitaciones en las que se aplicará el horario: 
+                    </p>
+
+                    <div class="pp2rooms_normal">
+                        <div class="button_wrapper buttons_ppw2">
+                            <div class="b_room_wrap">
+                                <div class="room_number_static">
+                                    <h4 id="number_rooms_static">0</h4>
+                                </div>
+                                <div class="button_rooms bbrr_mobile" id="sch_rooms" onclick="sch_rooms()">
+                                    <img src="public/button_icons/icon_bed.png" alt="Habitaciones" class="button_icon button_icon_mobile">
+                                </div>
+                            </div>
+                            <div class="button_rooms bbrr_mobile" id="brooms_stat0" onclick="button_color_sch(this,0)">
+                                <img src="public/button_icons/icon_couch.png" alt="Sala" class="button_icon button_icon_mobile">
+                            </div>
+                            <div class="button_rooms bbrr_mobile" id="brooms_stat1" onclick="button_color_sch(this,1)">
+                                <img src="public/button_icons/icon_dinner.png" alt="Comedor" class="button_icon button_icon_mobile">
+                            </div>
+                            <div class="button_rooms bbrr_mobile" id="brooms_stat2" onclick="button_color_sch(this,2)">
+                                <img src="public/button_icons/icon_garage.png" alt="Garage" class="button_icon button_icon_mobile">
+                            </div>
+                            <div class="button_rooms bbrr_mobile" id="brooms_stat3" onclick="button_color_sch(this,3)">
+                                <img src="public/button_icons/icon_pool.png" alt="Alberca" class="button_icon button_icon_mobile">
+                            </div>
+                            <div class="button_rooms bbrr_mobile" id="brooms_stat4" onclick="button_color_sch(this,4)">
+                                <img src="public/button_icons/icon_plant.png" alt="Roof Garden" class="button_icon button_icon_mobile">
+                            </div>
+                            <div class="button_rooms bbrr_mobile" id="brooms_stat5" onclick="button_color_sch(this,5)">
+                                <img src="public/button_icons/icon_games.png" alt="Cuarto de juegos" class="button_icon button_icon_mobile">
+                            </div>
+                            <div class="button_rooms bbrr_mobile" id="brooms_stat6" onclick="button_color_sch(this,6)">
+                                <img src="public/button_icons/icon_court.png" alt="Cancha de tennis" class="button_icon button_icon_mobile">
+                            </div>
+                        </div>
+
+                        <p class="hab_selected">
+                            Habitaciones seleccionadas: <span id="num_habs">0</span>
+                        </p>
+
+                        <div class="button_sch_wrapper">
+                            <div id="acc_button" class="save_button" onclick="close_roomswindow()">
+                                <h6 class="button_txt">Guardar nuevo programa</h6>
+                            </div>
+                            
+                            <div id="acc_button" onclick="close_roomswindow()">
+                                <h6 class="button_txt">Cancelar</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="pp2_rooms">
+                        <div class="pp2_rooms_wrapper">
+                            <div class="button_wrapper buttons_ppw2 ppw2_rooms">
+                                <div class="button_rooms bbrr_mobile" id="brooms_stat7" onclick="button_color_sch(this,7)">
+                                    <img src="public/button_icons/room3.png" alt="Activar habitación 1" class="button_icon button_icon_mobile">
+                                </div>
+                                <div class="button_rooms bbrr_mobile" id="brooms_stat8" onclick="button_color_sch(this,8)">
+                                    <img src="public/button_icons/room2.png" alt="Activar habitación 2" class="button_icon button_icon_mobile">
+                                </div>
+                                <div class="button_rooms bbrr_mobile" id="brooms_stat9" onclick="button_color_sch(this,9)">
+                                    <img src="public/button_icons/room1.png" alt="Activar habitación 3" class="button_icon button_icon_mobile">
+                                </div>
+                                <div class="button_rooms bbrr_mobile" id="brooms_stat10" onclick="button_color_sch(this,10)">
+                                    <img src="public/button_icons/room4.png" alt="Activar habitación 4" class="button_icon button_icon_mobile">
+                                </div>
+                            </div>
+                    
+                            <div class="back_button" onclick="sch_rooms_back()">
+                                <h6 class="button_txt">Regresar</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program_history_wrapper">
+                        <img src="public/button_icons/icon_clock_history.png" alt="" class="clock_history_icon">
+                        <p class="phistory_txt">
+                            Mis programas
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
