@@ -1,4 +1,4 @@
-# Actividad 4.4.1: Aplicación de un sistema de iluminación inteligente
+# Actividad 4.4.1: Website for an intelligent lighting system
 
 ### Responsive website practice.
 
