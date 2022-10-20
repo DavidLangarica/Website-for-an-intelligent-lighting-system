@@ -1,6 +1,18 @@
+# Actividad: Página web para un sistema de iluminación inteligente
+
+### Práctica de sitio web responsivo.
+
+Enlace a la vista previa de la web: https://davidlangarica.github.io/Website-for-an-intelligent-lighting-system/
+
+Este proyecto presenta una página web responsiva para gestionar la iluminación del hogar, donde se pueden encender las luces de cada habitación individualmente. Del mismo modo, es posible programar un horario de encendido automático.
+
+Además, incluye un contador que muestra las habitaciones con luces encendidas en el momento de la consulta. Las habitaciones se representan mediante iconos para agilizar la interacción y mejorar la experiencia del usuario y, además, se ha buscado el uso de imágenes respecto al contexto de las pantallas para una comprensión más sencilla de la página.
+
+
+
 # Activity: Website for an intelligent lighting system
 
-### Responsive website practice.
+### Practice for a responsive website.
 
 Link to the website's preview: https://davidlangarica.github.io/Website-for-an-intelligent-lighting-system/
 
