@@ -2,7 +2,7 @@
 
 Responsive website practice
 
-Link to the website preview: https://davidlangarica.github.io/Website-for-an-intelligent-lighting-system/
+Link to the website's preview: https://davidlangarica.github.io/Website-for-an-intelligent-lighting-system/
 
 This project presents a responsive web page to manage home lighting, where you can turn on the lights of each room individually. In the same way, it is possible to program an automatic switch-on schedule.
 
